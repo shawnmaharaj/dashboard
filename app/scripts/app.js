@@ -15,7 +15,10 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'gridster',
+
+    'nvd3'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -29,7 +32,21 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/graph', {
+        templateUrl: 'views/graph.html',
+        controller: 'GraphCtrl',
+        controllerAs: 'graph'
+      })
+      .when('/collision', {
+        templateUrl: 'views/collision.html',
+        controller: 'CollisionCtrl',
+        controllerAs: 'collision'
+      })
       .otherwise({
         redirectTo: '/'
       });
+  }).controller('HeaderController', function ($scope, $location) {
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+    };
   });

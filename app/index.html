@@ -9,11 +9,27 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css"/>
+    <style type="text/css">
+
+      .gridster li header {
+        background: #999;
+        display: block;
+        font-size: 20px;
+        line-height: normal;
+        padding: 4px 0 6px ;
+        margin-bottom: 20px;
+        cursor: move;
+      }
+
+    </style>
+
   </head>
   <body ng-app="dashboardOncorpApp">
     <!--[if lte IE 8]>
@@ -36,12 +52,13 @@
             <a class="navbar-brand" href="#/">dashboardOncorp shawn</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse"  ng-controller="HeaderController">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Shawn</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
+              <li ng-class="{ active: isActive('/')}"><a href="#/">Shawn</a></li>
+              <li ng-class="{ active: isActive('/about')}"><a ng-href="#/about">About</a></li>
+              <li ng-class="{ active: isActive('/graph')}"><a ng-href="#/graph">Graph</a></li>
+              <li ng-class="{ active: isActive('/collision')}"><a ng-href="#/collision">Charts and Graphs</a></li>
             </ul>
           </div>
         </div>
@@ -81,6 +98,11 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/javascript-detect-element-resize/detect-element-resize.js"></script>
+    <script src="bower_components/angular-gridster/src/angular-gridster.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/nvd3/build/nv.d3.js"></script>
+    <script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -88,6 +110,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/graph.js"></script>
+        <script src="scripts/controllers/collision.js"></script>
         <!-- endbuild -->
 </body>
 </html>
