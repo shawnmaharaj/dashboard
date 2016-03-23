@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'gridster',
-
+'ui.bootstrap',
     'nvd3'
   ])
   .config(function ($routeProvider) {
@@ -41,6 +41,11 @@ angular
         templateUrl: 'views/collision.html',
         controller: 'CollisionCtrl',
         controllerAs: 'collision'
+      })
+      .when('/test', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'dashboardCtrl'
+        //,controllerAs: 'dashboardCtrl'
       })
       .otherwise({
         redirectTo: '/'

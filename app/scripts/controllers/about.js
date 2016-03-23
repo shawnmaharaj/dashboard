@@ -9,11 +9,7 @@
  */
 angular.module('dashboardOncorpApp')
   .controller('AboutCtrl', function ($scope) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
 
     $scope.$on('gridster-draggable-changed', function(gridster) {
       //alert('asdfasdf');

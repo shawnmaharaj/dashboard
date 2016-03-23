@@ -13,10 +13,14 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <!--<link rel="stylesheet" href="styles/main.css">-->
+    <link rel="stylesheet" href="styles/dashboard.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css"/>
-    <style type="text/css">
+    <link rel="stylesheet" href="styles/Flat.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<!--    <style type="text/css">
 
       .gridster li header {
         background: #999;
@@ -29,7 +33,7 @@
       }
 
     </style>
-
+-->
   </head>
   <body ng-app="dashboardOncorpApp">
     <!--[if lte IE 8]>
@@ -56,22 +60,22 @@
 
             <ul class="nav navbar-nav">
               <li ng-class="{ active: isActive('/')}"><a href="#/">Shawn</a></li>
-              <li ng-class="{ active: isActive('/about')}"><a ng-href="#/about">About</a></li>
-              <li ng-class="{ active: isActive('/graph')}"><a ng-href="#/graph">Graph</a></li>
+              <li ng-class="{ active: isActive('/about')}"><a ng-href="#/about">Flat Dashboard</a></li>
               <li ng-class="{ active: isActive('/collision')}"><a ng-href="#/collision">Charts and Graphs</a></li>
+              <li ng-class="{ active: isActive('/test')}"><a ng-href="#/test">Graphs on Dashboard</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container">
+    <div class="container"> <!--  -->
     <div ng-view=""></div>
     </div>
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><span class="glyphicon glyphicon-thumbs up"></span> </p>
       </div>
     </div>
 
@@ -103,6 +107,7 @@
     <script src="bower_components/d3/d3.js"></script>
     <script src="bower_components/nvd3/build/nv.d3.js"></script>
     <script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -112,6 +117,7 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/graph.js"></script>
         <script src="scripts/controllers/collision.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
         <!-- endbuild -->
 </body>
 </html>
